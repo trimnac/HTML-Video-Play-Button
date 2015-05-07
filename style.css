@@ -1,0 +1,84 @@
+.video{
+  position: relative;
+  height: 450px;
+}
+#video-wrapper{
+  transition: 0.3s;
+}
+.video.playing-wrap{
+  transition: 0.3s;
+  height: 650px;
+  height: 56.25vw;
+  max-height: 95vh;
+}
+.video video{
+  position: absolute;
+    right: 0;
+  bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    background-size: cover !important;
+}
+.video #vidpause{
+  position: absolute;
+  left: calc(50% - 50px);
+  top: calc(50% - 50px);
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  border: none;
+  opacity: 0.5;
+  border: 4px solid #f2f5f8;
+  background-color: #dee2e7;
+  transition: 0.3s;
+}
+#vidpause:before, #vidpause:after{
+  content: ' ';
+  position: absolute;
+}
+#vidpause.paused:before {
+  z-index: 2;
+  top: 30px ;
+  left: 35px;
+  width: 0;
+  height: 0;
+  border: 17px solid transparent;
+    border-left-color: #676767;
+  border-left-width: 30px;
+}
+#vidpause.playing:before, #vidpause.playing:after {
+  height: 30px;
+  width: 15px;
+  left: 27.5px;
+  top: 32.5px;
+  display: block;
+  background-color: #676767;
+}
+#vidpause.playing:after {
+ left: 47.5px;
+}
+#vidpause.playing:hover:before, #vidpause.playing:hover:after {
+    background-color: #444;
+  }
+#vidpause.paused:hover:before {
+  border-left-color: #444;
+}
+.video #vidpause:focus{
+  outline: none;
+}
+.video #vidpause:hover{
+  opacity: 1;
+  transition: 0.2s;
+}
+.video #vidpause.playing{
+  opacity: 0;
+}
+.video:hover #vidpause.playing{
+  opacity: 0.4;
+}
+.video #vidpause.playing:hover{
+  opacity: 0.9;
+}
